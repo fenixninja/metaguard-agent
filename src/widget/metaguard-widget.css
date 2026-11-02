@@ -1,0 +1,214 @@
+/* MetaGuard Agent Widget Styles */
+
+#metaguard-widget-root {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99999;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #1f2937;
+}
+
+.mg-launcher-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4), 0 8px 10px -6px rgba(16, 185, 129, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+}
+
+.mg-launcher-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 14px 28px -4px rgba(16, 185, 129, 0.5);
+}
+
+.mg-chat-panel {
+  position: absolute;
+  bottom: 72px;
+  right: 0;
+  width: 380px;
+  height: 540px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15), 0 0 1px 1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mg-chat-panel.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.mg-header {
+  padding: 16px 20px;
+  background: rgba(249, 250, 251, 0.85);
+  border-bottom: 1px solid #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mg-header-title {
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mg-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.mg-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #9ca3af;
+}
+
+.mg-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mg-message {
+  max-width: 82%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.mg-message.user {
+  align-self: flex-end;
+  background: #10b981;
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
+}
+
+.mg-message.assistant {
+  align-self: flex-start;
+  background: #f3f4f6;
+  color: #1f2937;
+  border-bottom-left-radius: 4px;
+}
+
+.mg-message.alert {
+  align-self: center;
+  max-width: 90%;
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  font-size: 12px;
+  text-align: center;
+}
+
+.mg-typing-indicator {
+  display: inline-block;
+  width: 6px;
+  height: 14px;
+  background: #10b981;
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: mgBlink 0.8s infinite;
+}
+
+@keyframes mgBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.mg-input-bar {
+  padding: 12px 16px;
+  border-top: 1px solid #f3f4f6;
+  display: flex;
+  gap: 8px;
+  background: #ffffff;
+}
+
+.mg-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 13.5px;
+  outline: none;
+}
+
+.mg-input:focus {
+  border-color: #10b981;
+}
+
+.mg-send-btn, .mg-cua-btn {
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.mg-cua-btn {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+
+/* Spotlight and Virtual Cursor for Computer Use */
+.mg-spotlight-ring {
+  outline: 3px solid #10b981 !important;
+  box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.25), 0 0 20px rgba(16, 185, 129, 0.45) !important;
+  transition: all 0.25s ease !important;
+}
+
+.mg-click-ripple {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  margin-left: -16px;
+  margin-top: -16px;
+  border-radius: 50%;
+  border: 2px solid #10b981;
+  background: rgba(16, 185, 129, 0.35);
+  pointer-events: none;
+  z-index: 100000;
+  animation: mgRipple 0.5s ease-out forwards;
+}
+
+@keyframes mgRipple {
+  0% { transform: scale(0.2); opacity: 1; }
+  100% { transform: scale(2.4); opacity: 0; }
+}

@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+
+# Environment variables & secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS & Editors
+.DS_Store
+.vscode/
+.idea/

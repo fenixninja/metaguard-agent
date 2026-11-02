@@ -1,0 +1,35 @@
+{
+  "name": "metaguard-agent",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Production-grade agent framework for Meta Model API with Computer Use (CUA), multi-layer security guardrails, zero-code enforcement, and conversational harness locks.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "example": "node example/server.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "meta-ai",
+    "meta-model-api",
+    "computer-use",
+    "agent",
+    "guardrails",
+    "prompt-injection",
+    "antimalware",
+    "express",
+    "middleware",
+    "cua"
+  ],
+  "author": "Fenix Rios <fbamperius@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "express": "^4.21.0",
+    "typescript": "^5.6.0"
+  }
+}
